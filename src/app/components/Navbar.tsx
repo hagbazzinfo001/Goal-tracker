@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { FiTarget, FiMenu, FiX, FiSun, FiMoon, FiPlus } from 'react-icons/fi';
 import { currentUser } from '@/utils/mockData';
+import Image from 'next/image';
 
 interface NavbarProps {
   onCreateGoal: () => void;
@@ -62,7 +63,7 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
             
             <div className="relative">
               <div className="flex items-center">
-                <img
+                <Image
                   className="h-8 w-8 rounded-full border-2 border-gray-200 dark:border-slate-600"
                   src={currentUser.avatar}
                   alt={currentUser.name}
@@ -134,7 +135,7 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
           <div className="pt-4 pb-3 border-t border-gray-200 dark:border-slate-700">
             <div className="flex items-center px-4">
               <div className="flex-shrink-0">
-                <img
+                <Image
                   className="h-10 w-10 rounded-full"
                   src={currentUser.avatar}
                   alt={currentUser.name}

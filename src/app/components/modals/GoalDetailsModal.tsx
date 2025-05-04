@@ -1,14 +1,14 @@
 'use client';
-
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
 import { useGoals } from '@/context/GoalContext';
-import { Milestone } from '@/types';
-import { FiX, FiEdit2, FiTrash2, FiCheck, FiPlus } from 'react-icons/fi';
+// import { Milestone } from '@/types';
+import { FiX,   FiTrash2, FiCheck, FiPlus } from 'react-icons/fi';
 
 export default function GoalDetailsModal() {
-  const { selectedGoal, setSelectedGoal, updateProgress, toggleMilestone, addComment, addMilestone, updateGoal, deleteGoal } = useGoals();
+  const { selectedGoal, setSelectedGoal, updateProgress, toggleMilestone, addComment, addMilestone,   deleteGoal } = useGoals();
   const [commentText, setCommentText] = useState('');
   const [newMilestone, setNewMilestone] = useState({
     title: '',
@@ -373,7 +373,7 @@ export default function GoalDetailsModal() {
                     {selectedGoal.comments.map((comment) => (
                       <li key={comment.id} className="pb-3 border-b border-gray-200 dark:border-slate-600 last:border-0 last:pb-0">
                         <div className="flex items-start space-x-2">
-                          <img
+                          <Image
                             src={comment.user.avatar}
                             alt={comment.user.name}
                             className="w-8 h-8 rounded-full"
@@ -402,7 +402,7 @@ export default function GoalDetailsModal() {
                 <div className="mt-2">
                   <label htmlFor="comment" className="sr-only">Add comment</label>
                   <div className="flex items-start space-x-3">
-                    <img
+                    <Image
                       src={selectedGoal.comments[0]?.user.avatar || 'https://randomuser.me/api/portraits/women/1.jpg'}
                       alt="Your avatar"
                       className="w-8 h-8 rounded-full"
