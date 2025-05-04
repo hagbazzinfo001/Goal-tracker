@@ -4,8 +4,8 @@ import { User, Goal, Team, Comment, Milestone, GoalCategory, GoalPriority } from
 export const mockUsers: User[] = [
   {
     id: '1',
-    name: 'Alex Morgan',
-    email: 'alex@example.com',
+    name: 'Agbabiaka O.',
+    email: 'Agbabiakahammed003@gmail.com',
     avatar: 'https://randomuser.me/api/portraits/women/1.jpg',
   },
   {
