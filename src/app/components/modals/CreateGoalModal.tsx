@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useGoals } from '@/context/GoalContext';
-import { Goal, GoalCategory, GoalPriority } from '@/types';
-import { currentUser } from '@/utils/mockData';
+import { useGoals } from 'context/GoalContext';
+import { Goal, GoalCategory, GoalPriority } from 'types';
+import { currentUser } from 'utils/mockData';
 import { FiX } from 'react-icons/fi';
 
 interface CreateGoalModalProps {

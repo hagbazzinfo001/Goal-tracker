@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
-import { useGoals } from '@/context/GoalContext';
+import { useGoals } from 'context/GoalContext';
 // import { Milestone } from '@/types';
 import { FiX,   FiTrash2, FiCheck, FiPlus } from 'react-icons/fi';
 

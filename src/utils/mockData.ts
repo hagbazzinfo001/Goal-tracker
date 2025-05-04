@@ -1,4 +1,4 @@
-import { User, Goal, Team, Comment, Milestone, GoalCategory, GoalPriority } from '@/types';
+import { User, Goal, Team, Comment, Milestone, GoalCategory, GoalPriority } from 'types';
 
 // Mock Users
 export const mockUsers: User[] = [

@@ -1,8 +1,8 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Goal, Milestone, Comment, GoalCategory, GoalPriority } from '@/types';
-import { generateMockGoals, currentUser } from '@/utils/mockData';
+import { Goal, Milestone, Comment, GoalCategory, GoalPriority } from '../types';
+import { generateMockGoals, currentUser } from '../utils/mockData';
 
 interface GoalContextProps {
   goals: Goal[];

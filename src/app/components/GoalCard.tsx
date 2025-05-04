@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { format, isPast, isToday } from 'date-fns';
-import { useGoals } from '@/context/GoalContext';
-import { Goal } from '@/types';
+import { useGoals } from '../../context/GoalContext';
+import { Goal } from '../../types';
 import { FiCalendar, FiUsers, FiUser,   FiFlag } from 'react-icons/fi';
 
 interface GoalCardProps {
