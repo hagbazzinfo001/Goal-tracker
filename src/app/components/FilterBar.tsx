@@ -35,19 +35,19 @@ export default function FilterBar() {
   ];
 
   const handleCategoryChange = (value: GoalCategory | 'all') => {
-    filterGoals(value, activeFilters.completed, activeFilters.priority);
+    filterGoals(value, activeFilters.completed === 'all' ? undefined : activeFilters.completed, activeFilters.priority);
   };
 
   const handlePriorityChange = (value: GoalPriority | 'all') => {
-    filterGoals(activeFilters.category, activeFilters.completed, value);
+    filterGoals(activeFilters.category, activeFilters.completed === 'all' ? undefined : activeFilters.completed, value);
   };
 
   const handleStatusChange = (value: boolean | 'all') => {
-    filterGoals(activeFilters.category, value, activeFilters.priority);
+    filterGoals(activeFilters.category, value === 'all' ? undefined : value, activeFilters.priority);
   };
 
   const clearFilters = () => {
-    filterGoals('all', 'all', 'all');
+    filterGoals('all', undefined, 'all');
   };
 
   const hasActiveFilters = activeFilters.category !== 'all' || 
