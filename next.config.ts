@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         hostname: "randomuser.me",
         pathname: "/api/portraits/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.postimg.cc", // Add this hostname
+        pathname: "/**", // Allow all paths under this hostname
+      },
       // Add other domains if needed:
       {
         protocol: "https",

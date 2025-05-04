@@ -157,15 +157,15 @@ export default function Dashboard({ onCreateGoal }: DashboardProps) {
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Progress Overview</h2>
             <div className="flex flex-col items-center">
-              <div className="w-full h-40 mb-4">
+              { <div className="w-full h-40 mb-4">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
                       data={statusData}
                       cx="50%"
                       cy="50%"
-                      innerRadius={40}
-                      outerRadius={80}
+                      innerRadius={30}
+                      outerRadius={50}
                       paddingAngle={5}
                       dataKey="value"
                     >
@@ -176,7 +176,7 @@ export default function Dashboard({ onCreateGoal }: DashboardProps) {
                     <Legend />
                   </PieChart>
                 </ResponsiveContainer>
-              </div>
+              </div> }
               <div className="text-center">
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Overall Completion</p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white">{progressPercentage}%</p>

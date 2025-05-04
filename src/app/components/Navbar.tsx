@@ -6,7 +6,8 @@ import { useTheme } from 'next-themes';
 import { FiTarget, FiMenu, FiX, FiSun, FiMoon, FiPlus } from 'react-icons/fi';
 import { currentUser } from '../../utils/mockData';
 import Image from 'next/image';
-
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 interface NavbarProps {
   onCreateGoal: () => void;
 }
@@ -14,6 +15,9 @@ interface NavbarProps {
 export default function Navbar({ onCreateGoal }: NavbarProps) {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
+
 
   return (
     <nav className="bg-white dark:bg-slate-800 shadow-sm sticky top-0 z-10">
@@ -31,15 +35,36 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
             </motion.div>
             
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <a href="#" className="border-blue-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              <Link
+                href="/"
+                className={`${
+                  isActive('/') 
+                    ? 'border-blue-500 text-gray-900 dark:text-white'
+                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
                 Dashboard
-              </a>
-              <a href="#" className="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              </Link>
+              <Link
+                href="/team"
+                className={`${
+                  isActive('/team')
+                    ? 'border-blue-500 text-gray-900 dark:text-white'
+                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
                 Teams
-              </a>
-              <a href="#" className="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              </Link>
+              {/* <Link
+                href="/analytics"
+                className={`${
+                  isActive('/analytics')
+                    ? 'border-blue-500 text-gray-900 dark:text-white'
+                    : 'border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white hover:border-gray-300'
+                } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+              >
                 Analytics
-              </a>
+              </Link> */}
             </div>
           </div>
           
@@ -65,8 +90,8 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
               <div className="flex items-center">
                 <Image
                   className="h-8 w-8 rounded-full border-2 border-gray-200 dark:border-slate-600"
-                  src={currentUser.avatar}
-                  alt={currentUser.name}
+                  // src={currentUser.avatar}
+                  src="https://i.postimg.cc/yxwg4krP/IMG-0667-removebg.png"                  alt={currentUser.name}
                   width={32} // Specify the width
   height={32} // Specify the height
                 />
@@ -106,40 +131,44 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
           transition={{ duration: 0.2 }}
         >
           <div className="pt-2 pb-3 space-y-1">
-            <a
-              href="#"
-              className="bg-blue-50 dark:bg-slate-700 border-l-4 border-blue-500 text-blue-700 dark:text-white block pl-3 pr-4 py-2 text-base font-medium"
+            <Link
+              href="/"
+              className={`${
+                isActive('/')
+                  ? 'bg-blue-50 dark:bg-slate-700 border-l-4 border-blue-500 text-blue-700 dark:text-white'
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-gray-500'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Dashboard
-            </a>
-            <a
-              href="#"
-              className="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            </Link>
+            <Link
+              href="/team"
+              className={`${
+                isActive('/team')
+                  ? 'bg-blue-50 dark:bg-slate-700 border-l-4 border-blue-500 text-blue-700 dark:text-white'
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-gray-500'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Teams
-            </a>
-            <a
-              href="#"
-              className="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            </Link>
+            {/* <Link
+              href="/analytics"
+              className={`${
+                isActive('/analytics')
+                  ? 'bg-blue-50 dark:bg-slate-700 border-l-4 border-blue-500 text-blue-700 dark:text-white'
+                  : 'border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-gray-500'
+              } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
             >
               Analytics
-            </a>
-            <div className="pt-4 pb-2">
-              <button
-                onClick={onCreateGoal}
-                className="w-full flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                <FiPlus className="mr-2" />
-                New Goal
-              </button>
-            </div>
+            </Link> */}
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200 dark:border-slate-700">
             <div className="flex items-center px-4">
               <div className="flex-shrink-0">
                 <Image
                   className="h-10 w-10 rounded-full"
-                  src={currentUser.avatar}
+                  // src={currentUser.avatar}
+                  src="https://i.postimg.cc/yxwg4krP/IMG-0667-removebg.png"
                   alt={currentUser.name}
                   width={40} // Specify the width
   height={40} // Specify the height

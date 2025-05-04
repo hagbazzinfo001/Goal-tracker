@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import CreateGoalModal from './components/modals/CreateGoalModal';
 import GoalDetailsModal from './components/modals/GoalDetailsModal';
 import { useGoals } from 'context/GoalContext';
- 
+
 
 export default function Home() {
   const { selectedGoal } = useGoals();
