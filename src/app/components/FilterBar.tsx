@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useGoals } from '@/context/GoalContext';
-import { GoalCategory, GoalPriority } from '@/types';
+import { useGoals } from '../../context/GoalContext';
+import { GoalCategory, GoalPriority } from '../../types';
 import { FiFilter, FiX } from 'react-icons/fi';
 
 export default function FilterBar() {

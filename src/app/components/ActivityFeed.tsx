@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import {  formatDistanceToNow } from 'date-fns';
-import { useGoals } from '@/context/GoalContext';
+import { useGoals } from '../../context/GoalContext';
 import { FiMessageCircle, FiCheckCircle, FiTarget, FiFlag, FiPlus } from 'react-icons/fi';
 
 export default function ActivityFeed() {
@@ -35,7 +35,17 @@ export default function ActivityFeed() {
       });
       
       // Add comments
-      goal.comments.forEach(comment => {
+      interface Comment {
+        id: string;
+        createdAt: string;
+        user: {
+          name: string;
+          avatar?: string;
+        };
+        content: string;
+      }
+
+      goal.comments.forEach((comment: Comment) => {
         items.push({
           id: `comment-${comment.id}`,
           type: 'comment_added',
@@ -49,7 +59,14 @@ export default function ActivityFeed() {
       });
       
       // Add completed milestones
-      goal.milestones.filter(m => m.completed).forEach(milestone => {
+      interface Milestone {
+        id: string;
+        title: string;
+        dueDate: string;
+        completed: boolean;
+      }
+
+      goal.milestones.filter((m: Milestone) => m.completed).forEach((milestone: Milestone) => {
         items.push({
           id: `milestone-${milestone.id}`,
           type: 'milestone_completed',

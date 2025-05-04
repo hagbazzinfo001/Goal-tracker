@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useGoals } from '@/context/GoalContext';
+import { useGoals } from '../../context/GoalContext';
 import GoalCard from './GoalCard';
 import ActivityFeed from './ActivityFeed';
 import FilterBar from './FilterBar';
