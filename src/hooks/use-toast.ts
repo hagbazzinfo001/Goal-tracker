@@ -199,7 +199,9 @@
 'use client';
 
 import * as React from 'react';
-import type { ToastActionElement, ToastProps } from "@/app/components/ui/toast";
+// Update the import path to the correct location or ensure the module exists
+// Update the import path to the correct location or create the missing file
+import type { ToastActionElement, ToastProps } from "app/components/ui/toast";
 
 const TOAST_LIMIT = 1;
 const TOAST_REMOVE_DELAY = 1000000;

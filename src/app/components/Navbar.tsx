@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { FiTarget, FiMenu, FiX, FiSun, FiMoon, FiPlus } from 'react-icons/fi';
-import { currentUser } from '@/utils/mockData';
+import { currentUser } from '../../utils/mockData';
 import Image from 'next/image';
 
 interface NavbarProps {
