@@ -67,6 +67,8 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
                   className="h-8 w-8 rounded-full border-2 border-gray-200 dark:border-slate-600"
                   src={currentUser.avatar}
                   alt={currentUser.name}
+                  width={32} // Specify the width
+  height={32} // Specify the height
                 />
               </div>
             </div>
@@ -139,6 +141,8 @@ export default function Navbar({ onCreateGoal }: NavbarProps) {
                   className="h-10 w-10 rounded-full"
                   src={currentUser.avatar}
                   alt={currentUser.name}
+                  width={40} // Specify the width
+  height={40} // Specify the height
                 />
               </div>
               <div className="ml-3">

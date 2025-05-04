@@ -1,8 +1,8 @@
 'use client';
-
+import Image from 'next/image';
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { format, formatDistanceToNow } from 'date-fns';
+import {  formatDistanceToNow } from 'date-fns';
 import { useGoals } from '@/context/GoalContext';
 import { FiMessageCircle, FiCheckCircle, FiTarget, FiFlag, FiPlus } from 'react-icons/fi';
 
@@ -11,7 +11,7 @@ export default function ActivityFeed() {
   
   // Generate activity items from goals, comments, and milestones
   const activityItems = useMemo(() => {
-    let items: {
+    const items: {
       id: string;
       type: 'goal_created' | 'comment_added' | 'milestone_completed' | 'progress_updated';
       goalId: string;
@@ -142,11 +142,15 @@ export default function ActivityFeed() {
                 {activity.type === 'goal_created' && 'New goal created'}
                 {activity.type === 'comment_added' && (
                   <span className="flex items-center">
-                    <img 
+                    {activity.userAvatar ? (
+                    <Image 
                       src={activity.userAvatar} 
-                      alt={activity.userName} 
+                      alt={activity.userName || 'User Avatar'} 
                       className="w-4 h-4 rounded-full mr-1.5"
                     />
+                  ) : (
+                    <div className="w-4 h-4 rounded-full bg-gray-300 mr-1.5" />
+                  )}
                     {activity.userName}
                   </span>
                 )}
@@ -162,29 +166,29 @@ export default function ActivityFeed() {
             <p className="text-xs text-gray-700 dark:text-gray-300 mb-1 truncate">
               {activity.type === 'goal_created' && (
                 <span>
-                  Goal "<span className="font-medium">{activity.goalTitle}</span>" was created
+                  Goal &quot;<span className="font-medium">{activity.goalTitle}</span>&quot; was created
                 </span>
               )}
               {activity.type === 'comment_added' && (
                 <span>
-                  Commented on "<span className="font-medium">{activity.goalTitle}</span>"
+                  Commented on &quot;<span className="font-medium">{activity.goalTitle}</span>&quot;
                 </span>
               )}
               {activity.type === 'milestone_completed' && (
                 <span>
-                  Milestone "<span className="font-medium">{activity.milestoneName}</span>" for goal "<span className="font-medium">{activity.goalTitle}</span>"
+                  Milestone &quot;<span className="font-medium">{activity.milestoneName}</span>&quot; for goal &quot;<span className="font-medium">{activity.goalTitle}</span>&quot;
                 </span>
               )}
               {activity.type === 'progress_updated' && (
                 <span>
-                  Progress on "<span className="font-medium">{activity.goalTitle}</span>" updated to {activity.progressValue}%
+                  Progress on &quot;<span className="font-medium">{activity.goalTitle}</span>&quot; updated to {activity.progressValue}%
                 </span>
               )}
             </p>
             
             {activity.type === 'comment_added' && activity.content && (
               <div className="text-xs italic text-gray-500 dark:text-gray-400 mt-1 pl-2 border-l-2 border-gray-200 dark:border-gray-700">
-                "{activity.content.length > 60 ? `${activity.content.substring(0, 60)}...` : activity.content}"
+                &quot;{activity.content.length > 60 ? `${activity.content.substring(0, 60)}...` : activity.content}&quot;
               </div>
             )}
           </div>
