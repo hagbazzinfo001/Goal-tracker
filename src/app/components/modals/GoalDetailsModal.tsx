@@ -91,13 +91,13 @@ export default function GoalDetailsModal() {
         animate="visible"
         exit="hidden"
         variants={overlay}
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 mt-20 pt-50 flex items-center justify-center p-4 h-[80%] overflow-y-auto"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 mt-20  flex items-center justify-center p-3  lg:pt-50 pt-120 overflow-y-auto h-auto "
         onClick={() => setSelectedGoal(null)}
       >
         <motion.div
           variants={modal}
           transition={{ type: 'spring', damping: 25, stiffness: 500 }}
-          className="bg-white dark:bg-slate-800 rounded-lg max-w-3xl w-full shadow-xl overflow-hidden"
+          className="bg-white dark:bg-slate-800 rounded-lg max-w-3xl w-full shadow-xl overflow-auto"
           onClick={e => e.stopPropagation()}
         >
           <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-slate-700">

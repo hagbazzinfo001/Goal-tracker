@@ -6,7 +6,7 @@ export const mockUsers: User[] = [
     id: '1',
     name: 'Agbabiaka O.',
     email: 'Agbabiakahammed003@gmail.com',
-    avatar: 'https://randomuser.me/api/portraits/women/1.jpg',
+    avatar: 'https://i.postimg.cc/yxwg4krP/IMG-0667-removebg.png',
   },
   {
     id: '2',

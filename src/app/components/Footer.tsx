@@ -63,7 +63,7 @@ export default function Footer() {
               Product
             </h3>
             <ul className="mt-4 space-y-3">
-              <motion.li whileHover={{ x: 2 }}>
+              <motion.li whileHover={{ x: 2 }} > 
                 <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Features
                 </li>

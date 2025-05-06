@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"  suppressHydrationWarning suppressContentEditableWarning>
       <body className={inter.className}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>        
          <main className='bg-white dark:bg-slate-900  ' suppressContentEditableWarning>

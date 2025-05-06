@@ -82,7 +82,7 @@ export default function CreateGoalModal({ onClose }: CreateGoalModalProps) {
         animate="visible"
         exit="hidden"
         variants={overlay}
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 h-[80%] mt-20 pt-50 overflow-auto"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 mt-15  p-2 flex items-center justify-center pt-80 lg:pt-40   overflow-y-auto h-auto  "
         onClick={onClose}
       >
         <motion.div
