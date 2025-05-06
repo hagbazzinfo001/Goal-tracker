@@ -58,28 +58,29 @@ export default function TeamsModal({ isOpen, onClose }: TeamsModalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 mt-20 pt-50 overflow-y-auto pt-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-3 mt-20 pt-180 overflow-y-auto lg:pt-40"
           onClick={onClose}
         >
+ 
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 500 }}
-            className="bg-white dark:bg-slate-800 rounded-lg max-w-4xl w-full shadow-xl overflow-hidden"
+            className="bg-white dark:bg-slate-800 rounded-lg max-w-4xl w-full shadow-xl overflow-auto"
             onClick={e => e.stopPropagation()}
           >
             <div className="flex justify-end p-4">
               <button
                 onClick={onClose}
-                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 pt-70 lg:pt-170"
               >
                 <FiX className="h-6 w-6" />
               </button>
             </div>
 
             <div className="max-w-4xl mx-auto px-4 pb-8">
-              <div className=" overflow-hidden rounded-lg pt-80 justify-center flex items-center" >
+              <div className=" overflow-y-auto  rounded-lg  justify-center flex items-center" >
                 <Image
                   src="https://i.postimg.cc/yxwg4krP/IMG-0667-removebg.png"
                   alt="Profile"

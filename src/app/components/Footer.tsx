@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { FiTarget, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import TeamsModal from './TeamsModal'; // Adjust the path as necessary
+import { useState } from 'react';
 
 export default function Footer() {
+  const [isTeamsModalOpen, setIsTeamsModalOpen] = useState(false);
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -74,7 +78,10 @@ export default function Footer() {
                 </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                      onClick={() => {
+                        setIsTeamsModalOpen(true);
+                       }}>
                   Teams
                 </li>
               </motion.li>
@@ -121,6 +128,10 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <TeamsModal isOpen={isTeamsModalOpen} onClose={() => setIsTeamsModalOpen(false)} />
+
     </footer>
   );
 }
+
+ 
