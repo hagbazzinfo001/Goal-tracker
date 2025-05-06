@@ -57,7 +57,7 @@ export default function GoalCard({ goal, view }: GoalCardProps) {
       variants={item}
       whileHover={{ y: -4 }}
       onClick={() => setSelectedGoal(goal)}
-      className={`bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer ${
+      className={`bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer   ${
         isPastDue ? 'ring-2 ring-red-500 dark:ring-red-400' : ''
       } ${view === 'list' ? 'p-4' : 'p-5'}`}
     >
@@ -145,7 +145,7 @@ export default function GoalCard({ goal, view }: GoalCardProps) {
                 )}
               </div>
             )}
-            
+                
             {goal.comments.length > 0 && (
               <div className="ml-2 flex items-center space-x-1 text-sm text-gray-500 dark:text-gray-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

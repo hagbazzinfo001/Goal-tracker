@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiTarget, FiGithub, FiTwitter, FiMail } from 'react-icons/fi';
+import { FiTarget, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,16 +29,16 @@ export default function Footer() {
             
             <div className="mt-4 flex space-x-4">
               <motion.a 
-                href="#" 
+                href="https://www.linkedin.com/in/owolabi-agbabiaka/" 
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
                 whileHover={{ scale: 1.1 }}
               >
                 <span className="sr-only">Twitter</span>
-                <FiTwitter className="h-5 w-5" />
+                <FiLinkedin className="h-5 w-5" />
               </motion.a>
               
               <motion.a 
-                href="#" 
+                href="https://github.com/hagbazzinfo001/Goal-tracker.git" 
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
                 whileHover={{ scale: 1.1 }}
               >
@@ -47,7 +47,7 @@ export default function Footer() {
               </motion.a>
               
               <motion.a 
-                href="#" 
+                href="mailto:agbabiakahammed003@gmail.com" 
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
                 whileHover={{ scale: 1.1 }}
               >
@@ -64,24 +64,24 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3">
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Features
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Pricing
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Teams
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                < li href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Feedback
-                </a>
+                </li>
               </motion.li>
             </ul>
           </div>
@@ -92,22 +92,22 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3">
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li   className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Help Center
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Privacy
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <li className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Terms
-                </a>
+                </li>
               </motion.li>
               <motion.li whileHover={{ x: 2 }}>
-                <a href="#" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
+                <a href="mailto:agbabiakahammed003@gmail.com" className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">
                   Contact Us
                 </a>
               </motion.li>

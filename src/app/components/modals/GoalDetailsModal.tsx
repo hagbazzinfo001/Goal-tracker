@@ -91,7 +91,7 @@ export default function GoalDetailsModal() {
         animate="visible"
         exit="hidden"
         variants={overlay}
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 mt-20 pt-50 flex items-center justify-center p-4 h-[80%] overflow-y-auto"
         onClick={() => setSelectedGoal(null)}
       >
         <motion.div
@@ -377,6 +377,8 @@ export default function GoalDetailsModal() {
                             src={comment.user.avatar}
                             alt={comment.user.name}
                             className="w-8 h-8 rounded-full"
+                            width={32}
+                            height={32}
                           />
                           
                           <div className="flex-1">
@@ -406,6 +408,8 @@ export default function GoalDetailsModal() {
                       src={selectedGoal.comments[0]?.user.avatar || 'https://randomuser.me/api/portraits/women/1.jpg'}
                       alt="Your avatar"
                       className="w-8 h-8 rounded-full"
+                      width={32}
+                      height={32}
                     />
                     
                     <div className="flex-1">
